@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { user_type_datas_generator } from 'usable_datas'
+import { USER_OPTIONS } from "./usable_datas/global_variables";
+
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -8,11 +9,11 @@ export default new Vuex.Store({
         status: '',
         user: {
             type: '',
-            lang: ''
+            lang: 'fr'
         },
         darkTheme: false,
         componentDisplayed: '',
-        options: user_type_datas_generator.getOptions()
+        options: USER_OPTIONS
     },
     mutations: {
 
