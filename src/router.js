@@ -3,6 +3,11 @@ import Router from 'vue-router'
 Vue.use(Router);
 
 let router = new Router({
-
+routes : [
+    {
+        path: '/',
+        name: 'Home',
+    }
+]
 });
 export default router
