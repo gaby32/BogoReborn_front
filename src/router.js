@@ -1,21 +1,23 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Login from './pages/login'
-import Home from './pages/home'
+import login from './pages/login'
+import home from './pages/home'
+import register from './pages/register'
 Vue.use(Router);
 
 let router = new Router({
 routes : [
     {
         path: '/',
-        name: 'Home'
+        name: 'home'
     },
     {
         path: '/login',
-        name: 'Login'
+        name: 'login'
     },
     {
-
+        path: '/register',
+        name: 'register'
     }
 ]
 });
