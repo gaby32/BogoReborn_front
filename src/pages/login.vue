@@ -4,13 +4,10 @@
             <v-container fluid fill-height>
                 <v-layout align-center justify-center>
                     <v-flex xs12 sm8 md4>
-                        <v-card class="elevation-12"
-                        >
+                        <v-card class="elevation-12">
                             <v-toolbar
-                                    dark color="#ffe21c"
-                            >
+                                    dark color="#ffe21c">
                                 <v-toolbar-title>Login</v-toolbar-title>
-
                             </v-toolbar>
                             <v-card-text>
                                 <v-form @submit.prevent="login">
@@ -31,10 +28,8 @@
                                                   label="Password"
                                                   id="password"
                                                   type="password"></v-text-field>
-
                                     <router-link to="/Register">register</router-link>
                                     <v-card-actions>
-
                                         <v-spacer></v-spacer>
                                         <v-btn dark color="#ffe21c"
                                                type="submit">Login
