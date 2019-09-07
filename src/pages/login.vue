@@ -9,7 +9,7 @@
                             <v-toolbar
                                     dark color="#ffe21c"
                             >
-        q                              <v-toolbar-title>Login</v-toolbar-title>
+                                <v-toolbar-title>Login</v-toolbar-title>
 
                             </v-toolbar>
                             <v-card-text>
