@@ -3,15 +3,12 @@
 
     </div>
 </template>
-
+<link
 <script>
     export default {
-        name: 'app',
-        components: {
-        }
+        name: "bottom_toolbar"
     }
 </script>
 
-<style>
-
+<style scoped>
 </style>
