@@ -6,6 +6,8 @@
 </template>
 <link rel="component_specific_stylesheet" href="{{ componentCssLink }}">
 <script>
+    import { USER_OPTIONS } from "../usable_datas/global_variables";
+
     export default {
         name: "bottom_toolbar",
         computed: {
