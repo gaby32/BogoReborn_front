@@ -1,24 +1,34 @@
-<template>
-    <div v-bottom-navigation
-        :value="activeOption">
-        <v-btn v-for="option in options">{{ option.label }}</v-btn>
-    </div>
+<template onload="this.generateOptionsForStore()">
+    <v-bottom-navigation>
+        <v-btn v-for="option in options">{{ option }}</v-btn>
+    </v-bottom-navigation>
 </template>
-<link rel="component_specific_stylesheet" href="{{ componentCssLink }}">
-<script>
-    import { USER_OPTIONS } from "../usable_datas/global_variables";
 
+<script>
+    import { options } from '../usable_datas/global_variables';
     export default {
         name: "bottom_toolbar",
+        props: {
+            options: {}
+        },
         computed: {
-            componentCssLink: function() {
-                return this.isDark ? 'src/style/bottom_toolbar_dark.css' : 'src/style/bottom_toolbar_light.css'
-            },
             options: function() {
                 return this.$store.getters.toolBarOptions;
             }
         },
         methods: {
+            generateOptionsForStore() {
+                var newOptions = {}
+                switch(this.$store.getters.userType){
+                    case ('admin') :
+                        newOptions.users = options.users;
+                    default :
+                        newOptions.regions = options.regions;
+                        newOptions.cities = options.cities;
+                        newOptions.events = options.events;
+                }
+                //mutation pour mettre mes options
+            }
         },
         data() {
             return {
@@ -26,8 +36,9 @@
             }
         }
     }
-
 </script>
 
 <style scoped>
+    @import '../style/bottom_toolbar_dark.css';
+    @import '../style/bottom_toolbar_light.css';
 </style>

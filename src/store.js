@@ -1,7 +1,5 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { USER_OPTIONS } from "./usable_datas/global_variables";
-
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -13,7 +11,11 @@ export default new Vuex.Store({
         },
         darkTheme: false,
         componentDisplayed: '',
-        options: USER_OPTIONS
+        options: {
+            option1: 'opt1',
+            option2: 'opt2',
+            option3: 'opt3'
+        }
     },
     mutations: {
 
@@ -24,8 +26,8 @@ export default new Vuex.Store({
         }
     },
     getters: {
-        userType: this.state.user.type,
-        userLang: this.state.user.lang,
-        toolBarOptions: this.state.options
+        userType: state => { return state.user.type },
+        userLang: state => { return state.user.lang },
+        toolBarOptions: state => { return state.options }
     }
 })
