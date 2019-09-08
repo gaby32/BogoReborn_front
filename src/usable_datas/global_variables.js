@@ -1,9 +1,7 @@
 import store from '../store';
 
-//let theme = store.dispatch(isDarkTheme()) ? 'dark' : 'light';
-let theme = 'dark';
-//let lang = store.getters.userLang;
-let lang = 'fr';
+let theme = store.getters.theme;
+let lang = store.getters.user.lang;
 
 export const APP_ICONS_SRC = {
     regionIcon: `src/assets/icons/map-marker_${theme}.png`,
@@ -19,7 +17,7 @@ export const OPTIONS_LABELS = (lang === 'fr') ? {
     users: 'Usagers'
 } : {
     regions: 'Regions',
-    citys: 'Cities',
+    cities: 'Cities',
     events: 'Events',
     users: 'Users'
 };

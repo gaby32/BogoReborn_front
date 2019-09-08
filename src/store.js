@@ -6,28 +6,22 @@ export default new Vuex.Store({
     state: {
         status: '',
         user: {
-            type: '',
+            type: 'admin',
             lang: 'fr'
         },
-        darkTheme: false,
-        componentDisplayed: '',
-        options: {
-            option1: 'opt1',
-            option2: 'opt2',
-            option3: 'opt3'
-        }
+        config: {
+            darkTheme: false
+        },
+        componentDisplayed: ''
     },
     mutations: {
 
     },
     actions: {
-        isDarkTheme() {
-            return this.state.darkTheme
-        }
+
     },
     getters: {
-        userType: state => { return state.user.type },
-        userLang: state => { return state.user.lang },
-        toolBarOptions: state => { return state.options }
+        user: state => { return state.user },
+        theme: state => { return (state.config.darkTheme) ? 'dark' : 'light' }
     }
 })
