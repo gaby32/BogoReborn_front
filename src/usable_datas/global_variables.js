@@ -10,14 +10,25 @@ export const APP_ICONS_SRC = {
     eventIcon: `src/assets/icons/calendar_${theme}.png`
 };
 
-export const OPTIONS_LABELS = (lang === 'fr') ? {
-    regions: 'Régions',
-    cities: 'Villes',
-    events: 'Événements',
-    users: 'Usagers'
-} : {
-    regions: 'Regions',
-    cities: 'Cities',
-    events: 'Events',
-    users: 'Users'
+export const OPTIONS_LABELS =  {
+    regions: {
+        'ref': 'regions',
+        'fr': 'Régions',
+        'en': 'Regions'
+    },
+    cities: {
+        'ref': 'cities',
+        'fr': 'Villes',
+        'en': 'Cities'
+    },
+    events: {
+        'ref': 'events',
+        'fr': 'Événements',
+        'en': 'Events'
+    },
+    users: {
+        'ref': 'users',
+        'fr': 'Usagers',
+        'en': 'Users'
+    }
 };
