@@ -1,7 +1,7 @@
-import { getOptions } from "./user_options_generator";
+import store from '../store';
 
-let theme = this.$store.getters.isDarkTheme() ? 'dark' : 'light';
-let lang = this.$store.getters.userLang;
+let theme = store.getters.theme;
+let lang = store.getters.user.lang;
 
 export const APP_ICONS_SRC = {
     regionIcon: `src/assets/icons/map-marker_${theme}.png`,
@@ -12,14 +12,12 @@ export const APP_ICONS_SRC = {
 
 export const OPTIONS_LABELS = (lang === 'fr') ? {
     regions: 'Régions',
-    citys: 'Villes',
+    cities: 'Villes',
     events: 'Événements',
     users: 'Usagers'
 } : {
     regions: 'Regions',
-    citys: 'Cities',
+    cities: 'Cities',
     events: 'Events',
     users: 'Users'
 };
-
-export const USER_OPTIONS = getOptions();

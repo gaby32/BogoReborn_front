@@ -1,33 +1,42 @@
 <template>
-    <div v-bottom-navigation
-        :value="activeOption">
-        <v-btn v-for="option in options">{{ option.label }}</v-btn>
-    </div>
+    <v-bottom-navigation>
+        <v-btn v-for="option in options" @click="updateState(option)">{{ option[lang] }}</v-btn>
+    </v-bottom-navigation>
 </template>
-<link rel="component_specific_stylesheet" href="{{ componentCssLink }}">
-<script>
-    import { USER_OPTIONS } from "../usable_datas/global_variables";
 
+<script>
+    import store from '../store';
     export default {
         name: "bottom_toolbar",
-        computed: {
-            componentCssLink: function() {
-                return this.isDark ? 'src/style/bottom_toolbar_dark.css' : 'src/style/bottom_toolbar_light.css'
+        props: {
+            lang: {
+                type: String,
+                required: true
             },
-            options: function() {
-                return this.$store.getters.toolBarOptions;
+            options: {
+                type: Array,
+                required: true
             }
-        },
-        methods: {
         },
         data() {
             return {
-                isDark: this.$store.dispatch("isDarkTheme")
+
+            }
+        },
+        computed: {
+
+        },
+        methods: {
+            updateState: (option) => {
+                //TODO Arranger ici pour chager le state du store avec une mutation
+                store.state.status = `display_${option.ref}`;
+                console.log(store.state.status);
             }
         }
     }
-
 </script>
 
 <style scoped>
+    @import '../style/bottom_toolbar_dark.css';
+    @import '../style/bottom_toolbar_light.css';
 </style>
