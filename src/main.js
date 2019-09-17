@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import App from './App.vue'
+import App from './pages/home'
 import vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 import store from './store'
@@ -13,7 +13,7 @@ Vue.prototype.$http = Axios;
 new Vue({
     el: '#app',
     router,
-    vuetify: new vuetify(opts),
+    vuetify,
     store,
     render: h => h(App)
 });
