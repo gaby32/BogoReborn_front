@@ -1,7 +1,18 @@
 import store from '../store';
 
 let theme = store.getters.theme;
-let lang = store.getters.user.lang;
+
+export const USER_TYPES = {
+    admin: 'admin',
+    basic: 'basic',
+    visitor: 'visitor'
+};
+
+export const THEMES = {
+    light: 'light',
+    dark: 'dark'
+};
+
 
 export const APP_ICONS_SRC = {
     regionIcon: `src/assets/icons/map-marker_${theme}.png`,

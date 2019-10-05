@@ -15,7 +15,9 @@ export default new Vuex.Store({
         componentDisplayed: ''
     },
     mutations: {
-
+        changeState(state, newState) {
+            state.status = newState;
+        }
     },
     actions: {
 

@@ -1,5 +1,5 @@
 <template>
-    <v-bottom-navigation>
+    <v-bottom-navigation style="position: fixed; bottom: 0px;">
         <v-btn v-for="option in options" @click="updateState(option)">{{ option[lang] }}</v-btn>
     </v-bottom-navigation>
 </template>
@@ -28,9 +28,7 @@
         },
         methods: {
             updateState: (option) => {
-                //TODO Arranger ici pour chager le state du store avec une mutation
-                store.state.status = `display_${option.ref}`;
-                console.log(store.state.status);
+                store.commit( 'changeState', `display_${option.ref}`);
             }
         }
     }
